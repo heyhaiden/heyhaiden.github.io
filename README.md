@@ -8,9 +8,6 @@ date: "10 Dec 2020"
 
 -->
 
-# Website: [https://heyhaiden.github.io/]
-# Github Repo: [https://github.com/casa-ucl/casa0017-group-assignment-2022-casa-web-masters]
-
 # Introduction
 
 The aim of this web site is to investigate whether there is any visual or statistical correlation between changes in fine particulate matter (PM25) measurements between the two megacities London and Los Angeles leading up to and during the beginning of the Coronavirus pandemic in March of 2020. Due to the lockdown measures, would a car centric city have seen a more drastic improvement in its air quality than a non car centric city? 
