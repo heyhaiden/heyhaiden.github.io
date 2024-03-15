@@ -1,5 +1,5 @@
 import Layout from "../layout/layout";
-import avatar from '../assets/images/Rita-Headshot.png'
+import avatar from '../assets/images/hero-image.png'
 import aboutMeImage from '../assets/images/aboutMeNature.jpg'
 import SkillsAndEducations from "../components/SkillsAndEducations";
 import blogData from "../data/blogs.json"
@@ -31,13 +31,13 @@ const Home = () => {
       <div className="landingContainer">
         <div className="mainArea">
           <div className="textContent">
-            <div className="title">Hello, I'm</div>
-            <div className="title">Margarita Smoldareva</div>
+            <div className="title">Hello, I&apos;m</div>
+            <div className="title">Margarita Margarita</div>
             <div className="otherText">
-              Welcome to my World.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
             </div>
             <Link
-              to="public\files\2024_Margarita_Smoldareva_Resume.pdf"
+              to="/files/cv.txt"
               target="_blank"
               className="primaryButton"
               download={true}
@@ -68,7 +68,9 @@ const Home = () => {
           <div className="textArea">
             <div className="title">About Me</div>
             <div className="bodyText">
-              I am an ecologist based in London, South-East, covering all the local counties. I trade under Bee.Wise.Eco as a sole trader. 
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
             </div>
             <SkillsAndEducations />
           </div>
@@ -102,8 +104,8 @@ const Home = () => {
             I&apos;m currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
           </div>
           <div className="contactInfoArea">
-            <a href="mailto:margarita@gmail.com" className="contactLink">rita@beewise.eco</a>
-            <a href="tel:+9779876543210" className="contactLink">+447832329687</a>
+            <a href="mailto:margarita@gmail.com" className="contactLink">margarita@gmail.com</a>
+            <a href="tel:+9779876543210" className="contactLink">+977 9876543210</a>
           </div>
           <div className="socialIconsArea">
             <a href="https://facebook.com" target="_blank" rel="noreferrer">
