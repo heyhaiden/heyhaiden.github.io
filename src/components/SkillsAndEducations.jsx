@@ -3,17 +3,17 @@ import {useState} from "react";
 const SkillsAndEducations = () => {
   const [tab, setTab] = useState('Skills')
 
-  // const allTabs = ['Skills', 'Educations', 'Certifications']
+  // const allTabs = ['Skills', 'Education', 'Certifications']
   const tabInfo = {
     'Skills': ['Machine Learning', 'Mobile App Development', 'Electrical Designing'],
-    'Educations': ['University of California, Santa Cruz'],
+    'Education': ['University of California, Santa Cruz'],
     'Certifications': ['Google Professional Cloud Developer']
   }
 
   const renderRespectiveTabBody = () => { 
     const options = tabInfo[tab]
     return <ul>
-      {options.map(info => <li key={info}>{info} hello</li>)}
+      {options.map(info => <li key={info}>{info} </li>)}
     </ul>
 
   }

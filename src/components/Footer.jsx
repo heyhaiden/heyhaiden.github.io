@@ -1,7 +1,7 @@
 
 const Footer = () => {
   return <div className="footer">
-    Copyright © Margarita. All Rights Reserved.
+    Copyright © Margarita Smoldareva. All Rights Reserved.
   </div>;
 };
 

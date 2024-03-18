@@ -1,5 +1,5 @@
 import Layout from "../layout/layout";
-import avatar from '../assets/images/hero-image.png'
+import avatar from '../assets/images/Rita-Headshot-removebg-preview.png'
 import aboutMeImage from '../assets/images/aboutMeNature.jpg'
 import SkillsAndEducations from "../components/SkillsAndEducations";
 import blogData from "../data/blogs.json"
@@ -8,7 +8,9 @@ import instagramIcon from '../assets/icons/instagram.svg'
 import twitterIcon from '../assets/icons/twitter.svg' 
 import githubIcon from '../assets/icons/github.svg' 
 import { Link } from "react-router-dom";
-import wildcardBlogImage from '../assets/images/blogs/wildcard.png'
+import wildcardBlogImage from '../assets/images/blogs/wildcard.jpg'
+import wildcardBlogImage2 from '../assets/images/blogs/wildcard2.jpg'
+import wildcardBlogImage3 from '../assets/images/blogs/wildcard3.jpg'
 
 const Home = () => {
 
@@ -18,11 +20,15 @@ const Home = () => {
     .replace(/[^\w-]+/g, "")
   }
 
-  const getBlogImage = imageId => { 
+  const getBlogImage = imageId => {
     if (imageId === 1) {
       return wildcardBlogImage
-    } else { 
-      return wildcardBlogImage
+    } else {
+      if (imageId === 2) {
+        return wildcardBlogImage2
+      } else {
+        return wildcardBlogImage3
+      }
     }
   }
   
@@ -32,12 +38,12 @@ const Home = () => {
         <div className="mainArea">
           <div className="textContent">
             <div className="title">Hello, I&apos;m</div>
-            <div className="title">Margarita Margarita</div>
+            <div className="title">Margarita Smoldareva</div>
             <div className="otherText">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Leading Ecological Innovation from London's Heart. With a passion for sustainability and over nine years of experience, I leverage cutting-edge technology to enhance ecological research, conservation, and management.
             </div>
             <Link
-              to="/files/cv.txt"
+              to="/files/2024_Margarita_Smoldareva_Resume.pdf"
               target="_blank"
               className="primaryButton"
               download={true}
@@ -68,9 +74,7 @@ const Home = () => {
           <div className="textArea">
             <div className="title">About Me</div>
             <div className="bodyText">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Through my consultancy, BeeWise.Eco, I specialize in providing comprehensive ecological support for development projects, focusing on biodiversity enhancement and management. My innovation extends to developing IoT devices for real-time species classification, backed by a robust academic foundation in Connected Environments from UCL and Landscape Ecology and GIS from the University of Greenwich, along with various industry-specific certifications.
             </div>
             <SkillsAndEducations />
           </div>
@@ -104,8 +108,8 @@ const Home = () => {
             I&apos;m currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
           </div>
           <div className="contactInfoArea">
-            <a href="mailto:margarita@gmail.com" className="contactLink">margarita@gmail.com</a>
-            <a href="tel:+9779876543210" className="contactLink">+977 9876543210</a>
+            <a href="mailto:rita@beewise.eco" className="contactLink">rita@beewise.eco</a>
+            <a href="tel:+447832329687" className="contactLink">+44 7832 329687</a>
           </div>
           <div className="socialIconsArea">
             <a href="https://facebook.com" target="_blank" rel="noreferrer">

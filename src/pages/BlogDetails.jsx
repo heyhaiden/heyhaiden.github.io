@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import Layout from "../layout/layout";
 import blogData from "../data/blogs.json"
 import { useLocation, useNavigate } from "react-router-dom";
-import wildcardBlogImage from '../assets/images/blogs/wildcard.png'
+import wildcardBlogImage from '../assets/images/blogs/wildcard.jpg'
+import wildcardBlogImage2 from '../assets/images/blogs/wildcard2.jpg'
+import wildcardBlogImage3 from '../assets/images/blogs/wildcard3.jpg'
 
 const BlogDetails = () => {
   const location = useLocation()
@@ -20,7 +22,11 @@ const BlogDetails = () => {
     if (imageId === 1) {
       return wildcardBlogImage
     } else { 
-      return wildcardBlogImage
+      if (imageId === 2) {
+        return wildcardBlogImage2
+    } else { 
+      return wildcardBlogImage3
+    }
     }
   }
 
