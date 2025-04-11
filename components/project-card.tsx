@@ -16,12 +16,7 @@ export function ProjectCard({ project }: { project: Project }) {
     >
       <Link href={`/projects/${project.slug}`}>
         <div className="relative h-48">
-          <Image
-            src={project.heroType === "image" ? project.heroImage || "/placeholder.svg" : "/placeholder.svg"}
-            alt={project.title}
-            fill
-            className="object-cover"
-          />
+          <Image src={project.titleCard || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
         </div>
         <div className="p-4">
           <h3 className="text-xl font-semibold mb-2 group-hover:text-primary">{project.title}</h3>
@@ -41,4 +36,3 @@ export function ProjectCard({ project }: { project: Project }) {
     </motion.div>
   )
 }
-

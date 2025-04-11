@@ -5,6 +5,50 @@ import { Briefcase, GraduationCap, Code } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
 export default function About() {
+  const skillCategories = [
+    {
+      title: "Product Management",
+      badgeColor: "orange",
+      skills: [
+        "Agile Methodologies",
+        "Product Analytics",
+        "User Research & Testing",
+        "OKRs & KPI Management",
+        "Product-Led Growth (PLG)",
+        "Go-to-Market Strategy",
+      ],
+    },
+    {
+      title: "Technical Expertise",
+      badgeColor: "blue",
+      skills: [
+        "AI & Machine Learning",
+        "Internet of Things (IoT)",
+        "Virtual & Augmented Reality",
+        "Cloud Services (AWS)",
+        "JavaScript, Python, SQL",
+        "API Development",
+      ],
+    },
+    {
+      title: "Leadership & Strategy",
+      badgeColor: "green",
+      skills: [
+        "Cross-Functional Leadership",
+        "Stakeholder Management",
+        "Remote Team Management",
+        "A/B Testing",
+        "Experimentation Design",
+        "HIPAA Compliance",
+      ],
+    },
+    {
+      title: "Tools",
+      badgeColor: "purple",
+      skills: ["Jira", "Asana", "Notion", "Figma", "Miro", "Amazon Quicksight", "Grafana"],
+    },
+  ]
+
   return (
     <div className="container max-w-6xl mx-auto px-4 py-16">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
@@ -17,7 +61,7 @@ export default function About() {
               <Briefcase className="h-6 w-6" />
               Professional Summary
             </h2>
-            <div className="bg-white rounded-lg shadow-md p-8 space-y-4">
+            <div className="bg-gray-50 rounded-lg shadow-md p-8 space-y-4">
               <p>Hi, I'm Haiden. 👋</p>
               <p>
                 I'm a product leader and former founder with 7+ years of experience transforming digital products across
@@ -82,7 +126,7 @@ export default function About() {
                     url: "https://www.avatarmedic.com/",
                   },
                 ].map((job, index) => (
-                  <div key={index} className="bg-white rounded-lg shadow-md p-6">
+                  <div key={index} className="bg-gray-50 rounded-lg shadow-md p-6">
                     <h3 className="font-semibold">{job.title}</h3>
                     <p className="text-gray-600">
                       {job.url ? (
@@ -113,7 +157,7 @@ export default function About() {
                     period: "2013 - 2016",
                   },
                 ].map((edu, index) => (
-                  <div key={index} className="bg-white rounded-lg shadow-md p-6">
+                  <div key={index} className="bg-gray-50 rounded-lg shadow-md p-6">
                     <h3 className="font-semibold">{edu.degree}</h3>
                     <p className="text-gray-600">{edu.institution}</p>
                     <p className="text-sm text-gray-500">{edu.period}</p>
@@ -127,71 +171,24 @@ export default function About() {
               <Code className="h-6 w-6" />
               Skills
             </h2>
-            <div className="bg-white rounded-lg shadow-md p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Product Management</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "Agile Methodologies",
-                      "Product Analytics",
-                      "User Research & Testing",
-                      "OKRs & KPI Management",
-                      "Product-Led Growth (PLG)",
-                      "Go-to-Market Strategy",
-                    ].map((skill, index) => (
-                      <Badge key={index} variant="secondary">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Technical Expertise</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "AI & Machine Learning",
-                      "Internet of Things (IoT)",
-                      "Virtual & Augmented Reality",
-                      "Cloud Services (AWS)",
-                      "JavaScript, Python, SQL",
-                      "API Development",
-                    ].map((skill, index) => (
-                      <Badge key={index} variant="secondary">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Leadership & Strategy</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "Cross-Functional Leadership",
-                      "Stakeholder Management",
-                      "Remote Team Management",
-                      "A/B Testing",
-                      "Experimentation Design",
-                      "HIPAA Compliance",
-                    ].map((skill, index) => (
-                      <Badge key={index} variant="secondary">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Tools</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {["Jira", "Asana", "Notion", "Figma", "Miro", "Amazon Quicksight", "Grafana"].map(
-                      (skill, index) => (
-                        <Badge key={index} variant="secondary">
+            <div className="bg-gray-50 rounded-lg shadow-md p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {skillCategories.map((category, index) => (
+                  <div key={index}>
+                    <h3 className="text-lg font-semibold mb-3">{category.title}</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {category.skills.map((skill, skillIndex) => (
+                        <Badge
+                          key={skillIndex}
+                          variant="secondary"
+                          className={`bg-${category.badgeColor}-100 text-${category.badgeColor}-800 hover:bg-${category.badgeColor}-200`}
+                        >
                           {skill}
                         </Badge>
-                      ),
-                    )}
+                      ))}
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           </section>
@@ -200,4 +197,3 @@ export default function About() {
     </div>
   )
 }
-
