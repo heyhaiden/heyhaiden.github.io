@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haiden McGill - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Page-specific styles for full-height layout */
+        html, body {
+            height: 100%;
+            /* Removed overflow: hidden to enable scrolling */
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .home-wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .home-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 48rem;
+        }
+        
+        /* Using global header styles from CSS instead of local overrides */
+        
+        /* Using global nav-links styles from CSS instead of local overrides */
+        
+        /* Footer styling moved to the global CSS */
+    </style>
+</head>
+<body>
+    <div class="home-wrapper">
+        <header>
+            <div class="header-inner">
+                <a href="index.html" class="logo">HM</a>
+                <nav class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Projects</a>
+                    
+                </nav>
+            </div>
+        </header>
+
+        <div class="home-container">
+            <div class="profile-img-container">
+                <img src="headshot.png" alt="Haiden McGill" class="profile-img">
+            </div>
+            <div>
+                <h1 class="name">Haiden McGill</h1>
+                <h2 class="title">Technical Product Manager</h2>
+            </div>
+            <p class="bio">
+                Product leader with 7+ years of experience turning complex technologies into scalable B2B platforms. I specialize in driving innovation at the intersection of IoT, AI, and user-centered design. My work transforms emerging technologies into impactful solutions across health tech, climate tech, and beyond.
+            </p>
+            <div class="buttons">
+                <a href="projects.html" class="btn btn-primary">
+                    View Projects <span style="margin-left: 0.5rem;">→</span>
+                </a>
+                <a href="about.html" class="btn btn-outline">
+                    Learn More <span style="margin-left: 0.5rem;">👤</span>
+                </a>
+            </div>
+        </div>
+
+        <footer class="home-footer">
+            <div class="social-links">
+                <a href="https://github.com/heyhaiden" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/haidenmcgill/" target="_blank">LinkedIn</a>
+                <a href="https://devpost.com/heyhaiden" target="_blank">Devpost</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
