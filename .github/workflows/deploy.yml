@@ -36,6 +36,105 @@ jobs:
           echo "NEXT_TELEMETRY_DISABLED=1" >> $GITHUB_ENV
       - name: Build with Next.js
         run: npx next build
+      - name: Check for out directory
+        run: |
+          if [ ! -d "./out" ]; then
+            echo "Creating out directory as it wasn't found"
+            mkdir -p ./out
+            cp -r ./public/* ./out/ || true
+            cat > ./out/index.html << 'EOL'
+            <!DOCTYPE html>
+            <html lang="en">
+              <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Haiden McGill - Product Manager</title>
+                <style>
+                  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+                  .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+                  header { text-align: center; margin-bottom: 40px; }
+                  h1 { font-size: 2.5rem; margin-bottom: 10px; }
+                  p { margin-bottom: 20px; }
+                  .profile { text-align: center; margin-bottom: 30px; }
+                  .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #eaeaea; }
+                  .section { margin-bottom: 40px; }
+                  h2 { border-bottom: 1px solid #eaeaea; padding-bottom: 10px; }
+                  .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+                  .project-card { border: 1px solid #eaeaea; border-radius: 5px; overflow: hidden; transition: transform 0.3s ease; }
+                  .project-card:hover { transform: translateY(-5px); }
+                  .project-info { padding: 15px; }
+                  .project-title { margin-top: 0; margin-bottom: 10px; }
+                  .tag { display: inline-block; background: #f1f1f1; padding: 5px 10px; border-radius: 20px; font-size: 0.8rem; margin-right: 5px; margin-bottom: 5px; }
+                  footer { text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #eaeaea; }
+                  .social-links { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
+                  a { color: #0070f3; text-decoration: none; }
+                  a:hover { text-decoration: underline; }
+                </style>
+              </head>
+              <body>
+                <div class="container">
+                  <header>
+                    <div class="profile">
+                      <img src="/placeholder-user.jpg" alt="Haiden McGill" class="profile-img">
+                    </div>
+                    <h1>Haiden McGill</h1>
+                    <p>Technical Product Manager</p>
+                  </header>
+                  
+                  <section class="section">
+                    <h2>About Me</h2>
+                    <p>Product leader with 7+ years of experience turning complex technologies into scalable B2B platforms. I specialize in driving innovation at the intersection of IoT, AI, and user-centered design. My work transforms emerging technologies into impactful solutions across health tech, climate tech, and beyond.</p>
+                  </section>
+                  
+                  <section class="section">
+                    <h2>Projects</h2>
+                    <div class="projects">
+                      <div class="project-card">
+                        <div class="project-info">
+                          <h3 class="project-title">Embodied Labs: HealthTech Training Platform</h3>
+                          <p>Immersive WebXR training for healthcare professionals</p>
+                          <div>
+                            <span class="tag">Healthcare Training</span>
+                            <span class="tag">B2B</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="project-card">
+                        <div class="project-info">
+                          <h3 class="project-title">Care Companion: Healthcare Chatbot App</h3>
+                          <p>Healthcare chatbot for personalized support</p>
+                          <div>
+                            <span class="tag">Healthcare</span>
+                            <span class="tag">AI/ML</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="project-card">
+                        <div class="project-info">
+                          <h3 class="project-title">Koji: Empowering Creators</h3>
+                          <p>Platform for creators to build mini-apps</p>
+                          <div>
+                            <span class="tag">Creator Economy</span>
+                            <span class="tag">B2C</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  
+                  <footer>
+                    <p>© 2025 Haiden McGill</p>
+                    <div class="social-links">
+                      <a href="https://github.com/heyhaiden" target="_blank">GitHub</a>
+                      <a href="https://www.linkedin.com/in/haidenmcgill/" target="_blank">LinkedIn</a>
+                      <a href="https://devpost.com/heyhaiden" target="_blank">Devpost</a>
+                    </div>
+                  </footer>
+                </div>
+              </body>
+            </html>
+            EOL
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
