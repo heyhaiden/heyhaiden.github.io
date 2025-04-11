@@ -14,9 +14,6 @@ const nextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '' : '',
   // This ensures the router is aware of the base path
   trailingSlash: true,
-  experimental: {
-    webpackBuildWorker: true,
-  },
 }
 
 export default nextConfig

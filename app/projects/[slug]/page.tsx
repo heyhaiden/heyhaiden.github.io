@@ -1,8 +1,3 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowLeft, Check, LinkIcon } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { projects } from "@/lib/projects-data"
 import { notFound } from "next/navigation"
 import ProjectDetailClient from "./project-detail-client"
@@ -13,7 +8,13 @@ export function generateStaticParams() {
   }))
 }
 
-export default function ProjectDetail({ params }: { params: { slug: string } }) {
+type Props = {
+  params: {
+    slug: string
+  }
+}
+
+export default function ProjectDetail({ params }: Props) {
   const project = projects.find((p) => p.slug === params.slug)
 
   if (!project) {
