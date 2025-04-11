@@ -6,9 +6,8 @@ import { motion } from "framer-motion"
 import { ArrowLeft, Check, LinkIcon } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Project } from "@/lib/projects-data"
 
-export default function ProjectDetailClient({ project }: { project: Project }) {
+export default function ProjectDetailClient({ project }) {
   return (
     <div className="min-h-screen">
       <motion.div

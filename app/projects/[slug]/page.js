@@ -8,13 +8,7 @@ export function generateStaticParams() {
   }))
 }
 
-type Props = {
-  params: {
-    slug: string
-  }
-}
-
-export default function ProjectDetail({ params }: Props) {
+export default function ProjectDetail({ params }) {
   const project = projects.find((p) => p.slug === params.slug)
 
   if (!project) {
