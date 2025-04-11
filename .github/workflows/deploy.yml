@@ -33,20 +33,9 @@ jobs:
         run: npm install --legacy-peer-deps
       - name: Set up environment for build
         run: |
-          echo "NEXT_DISABLE_TS_ERROR_OVERLAY=true" >> $GITHUB_ENV
           echo "NEXT_TELEMETRY_DISABLED=1" >> $GITHUB_ENV
       - name: Build with Next.js
-        run: NEXT_TELEMETRY_DISABLED=1 TS_NODE_COMPILER_OPTIONS='{"transpileOnly":true}' npx next build --no-lint || true
-      - name: Check if build succeeded
-        run: |
-          if [ -d "./out" ]; then
-            echo "Build succeeded, out directory exists"
-          else
-            echo "Creating empty out directory as fallback"
-            mkdir -p ./out
-            cp -r ./public/* ./out/ || true
-            echo "<html><body><h1>Site under maintenance</h1></body></html>" > ./out/index.html
-          fi
+        run: npx next build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

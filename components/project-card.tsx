@@ -1,19 +1,12 @@
-"use client"
-
 import Image from "next/image"
 import Link from "next/link"
-import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import type { Project } from "@/lib/projects-data"
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <motion.div
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.2 }}
-      className="group rounded-lg overflow-hidden border bg-white"
-    >
+    <div className="group rounded-lg overflow-hidden border bg-white hover:-translate-y-1 transition-transform">
       <Link href={`/projects/${project.slug}`}>
         <div className="relative h-48">
           <Image src={project.titleCard || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
@@ -33,6 +26,6 @@ export function ProjectCard({ project }: { project: Project }) {
           </div>
         </div>
       </Link>
-    </motion.div>
+    </div>
   )
 }

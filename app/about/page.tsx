@@ -1,6 +1,3 @@
-"use client"
-
-import { motion } from "framer-motion"
 import { Briefcase, GraduationCap, Code } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
@@ -51,7 +48,7 @@ export default function About() {
 
   return (
     <div className="container max-w-6xl mx-auto px-4 py-16">
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+      <div>
         <h1 className="text-4xl font-bold mb-4">About Me</h1>
         <p className="text-gray-600 mb-10">Get to know my background, experience, and skills</p>
 
@@ -193,7 +190,7 @@ export default function About() {
             </div>
           </section>
         </div>
-      </motion.div>
+      </div>
     </div>
   )
 }
