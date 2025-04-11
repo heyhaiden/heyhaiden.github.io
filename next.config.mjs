@@ -11,7 +11,7 @@ const nextConfig = {
     unoptimized: true,
   },
   // For GitHub Pages
-  basePath: process.env.NODE_ENV === 'production' ? '' : '',
+  basePath: '',
   // This ensures the router is aware of the base path
   trailingSlash: true,
 }
