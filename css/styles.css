@@ -576,10 +576,12 @@ a:hover {
 }
 
 .project-header {
+
     margin-bottom: 2rem;
 }
 
 .project-header h1 {
+    text-align: center;
     margin-bottom: 0.5rem;
 }
 
